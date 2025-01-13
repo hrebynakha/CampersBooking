@@ -13,3 +13,16 @@ export const fetchCampers = createAsyncThunk(
     }
   }
 );
+
+export const fetchCamperDetail = createAsyncThunk(
+  "campers/fetchCamper",
+  async (id, thunkAPI) => {
+    const url = `/campers/${id}`;
+    try {
+      const { data } = await api.get(url);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);

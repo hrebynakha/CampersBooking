@@ -1,16 +1,21 @@
-import { Link, Outlet } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import CamperDetail from "../../components/CamperDetail/CamperDetail";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchCamperDetail } from "../../redux/campers/operations";
+import BookingForm from "../../components/BookingForm/BookingForm";
 
 const CatalogDetailPage = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(fetchCamperDetail(id));
+  }, [dispatch, id]);
+
   return (
     <div>
-      CatalogDetailPage
-      <li>
-        <Link to="features">Features</Link>
-      </li>
-      <li>
-        <Link to="reviews">Reviews</Link>
-      </li>
-      <Outlet />
+      <CamperDetail />
+      <BookingForm />
     </div>
   );
 };
