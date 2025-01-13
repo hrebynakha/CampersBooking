@@ -1,0 +1,19 @@
+.nav {
+  padding: 0;
+}
+.logo {
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.link {
+  background-color: aqua;
+  padding: 10px;
+}
+
+.link.active {
+  background-color: green;
+}

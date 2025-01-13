@@ -1,0 +1,15 @@
+.btn-link {
+  color: var(--cl-white);
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  width: 166px;
+  padding: 16px 40px;
+  outline: transparent;
+  background-color: var(--cl-red);
+}
+
+.btn-link:hover,
+.btn-link:active {
+  background-color: var(--cl-red-accent);
+}

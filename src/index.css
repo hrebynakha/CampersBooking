@@ -1,0 +1,43 @@
+::root {
+  --cl-black: #101828;
+  --cl-grayish-blue: #475467;
+  --cl-grayish-blue-accent: #6c717b;
+  --clr-red: #e44848;
+  --cl-red-accent: #d84343;
+  --cl-yellow: #ffc531;
+  --cl-grey-accent: #dadde1;
+  --cl-grey: #f2f4f7;
+  --cl-white-accent: #f7f7f7;
+  --cl-white: #ffffff;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  background-color: #c1aa8e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
