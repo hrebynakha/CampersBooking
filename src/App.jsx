@@ -6,25 +6,26 @@ const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const CatalogDetailPage = lazy(() =>
   import("./pages/CatalogDetailPage/CatalogDetailPage")
 );
-const Header = lazy(() => import("./components/Header/Header"));
-const Container = lazy(() => import("./components/Container/Container"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 import "./App.css";
+const LayoutBase = lazy(() => import("./components/LayoutBase/LayoutBase"));
+const LayoutGray = lazy(() => import("./components/LayoutGray/LayoutGray"));
 
 function App() {
   return (
     <>
-      <Header />
-      <Container>
-        <Suspense fallback={"loading...."}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/catalog" element={<CatalogPage />} />
+      <Suspense fallback={"loading...."}>
+        <Routes>
+          <Route path="/" element={<LayoutBase />}>
+            <Route index element={<HomePage />} />
+          </Route>
+          <Route path="/catalog" element={<LayoutGray />}>
+            <Route index element={<CatalogPage />} />
             <Route path="/catalog/:id" element={<CatalogDetailPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </Container>
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }
