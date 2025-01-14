@@ -7,7 +7,7 @@ const slice = createSlice({
     items: [],
     totalResults: 0,
     camper: null,
-    paginate: {
+    filter: {
       page: 1,
       limit: 4,
     },
@@ -16,9 +16,19 @@ const slice = createSlice({
     incrementPage: (state) => {
       return {
         ...state,
-        paginate: {
-          page: state.paginate.page + 1,
-          limit: state.paginate.limit,
+        filter: {
+          ...state.filter,
+          page: state.filter.page + 1,
+        },
+      };
+    },
+    changeSearchFilter: (state, { payload }) => {
+      return {
+        ...state,
+        filter: {
+          ...payload,
+          page: 1,
+          limit: 4,
         },
       };
     },
@@ -26,7 +36,7 @@ const slice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchCampers.fulfilled, (state, { payload }) => {
       state.items =
-        state.paginate.page === 1
+        state.filter.page === 1
           ? payload.items
           : [...state.items, ...payload.items];
       // const newItems = payload.items.filter(
@@ -43,5 +53,5 @@ const slice = createSlice({
     });
   },
 });
-export const { incrementPage } = slice.actions;
+export const { incrementPage, changeSearchFilter } = slice.actions;
 export const campersReducer = slice.reducer;

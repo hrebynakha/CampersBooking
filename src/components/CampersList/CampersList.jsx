@@ -8,6 +8,7 @@ import css from "./CampersList.module.css";
 import EquimentsList from "../EquimentsList/EquimentsList";
 import { incrementPage } from "../../redux/campers/slice";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+
 const CampersList = () => {
   const dispatch = useDispatch();
   const totalResults = useSelector(selectTotalResults);

@@ -5,9 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
 import { fetchCampers } from "../../redux/campers/operations";
 import { useSearchParams } from "react-router-dom";
-import { changeSearchFilter } from "../../redux/filters/slice";
-import { selectPageFilter } from "../../redux/filters/selectors";
-import { selectPaginateFilter } from "../../redux/campers/selectors";
+import { changeSearchFilter } from "../../redux/campers/slice";
+import { selectFilter } from "../../redux/campers/selectors";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -16,14 +15,14 @@ const CatalogPage = () => {
     () => Object.fromEntries(searchParams),
     [searchParams]
   );
-  const paginate = useSelector(selectPaginateFilter);
+  const filter = useSelector(selectFilter);
   useEffect(() => {
     dispatch(changeSearchFilter(params));
   }, [dispatch, params]);
 
   useEffect(() => {
-    dispatch(fetchCampers({ ...params, ...paginate }));
-  }, [dispatch, params, paginate]);
+    dispatch(fetchCampers({ ...filter, ...params }));
+  }, [dispatch, filter, params]);
 
   const handleSearch = (values) => {
     if (values) setSearchParams(values);
