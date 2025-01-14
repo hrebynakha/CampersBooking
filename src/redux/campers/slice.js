@@ -5,11 +5,35 @@ const slice = createSlice({
   name: "campers",
   initialState: {
     items: [],
+    totalResults: 0,
     camper: null,
+    paginate: {
+      page: 1,
+      limit: 4,
+    },
+  },
+  reducers: {
+    incrementPage: (state) => {
+      return {
+        ...state,
+        paginate: {
+          page: state.paginate.page + 1,
+          limit: state.paginate.limit,
+        },
+      };
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCampers.fulfilled, (state, { payload }) => {
-      state.items = payload.items;
+      state.items =
+        state.paginate.page === 1
+          ? payload.items
+          : [...state.items, ...payload.items];
+      // const newItems = payload.items.filter(
+      //   (item) => !state.items.some((existing) => existing.id === item.id)
+      // );
+      // state.items.push(...newItems);
+      state.totalResults = payload.total;
     });
     builder.addCase(fetchCampers.rejected, (state, { error }) => {
       state.items = [];
@@ -19,5 +43,5 @@ const slice = createSlice({
     });
   },
 });
-
+export const { incrementPage } = slice.actions;
 export const campersReducer = slice.reducer;
