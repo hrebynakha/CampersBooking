@@ -1,11 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectVisibleCampers } from "../../redux/campers/selectors";
+import { selectCampersItems } from "../../redux/campers/selectors";
 import css from "./CampersList.module.css";
 import EquimentsList from "../EquimentsList/EquimentsList";
 const CampersList = () => {
   const location = useLocation();
-  const campers = useSelector(selectVisibleCampers);
+  const campers = useSelector(selectCampersItems);
   return (
     <div>
       {campers.length > 0 ? (

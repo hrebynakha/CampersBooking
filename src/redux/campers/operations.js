@@ -3,10 +3,12 @@ import api from "../../utils/api/api";
 
 export const fetchCampers = createAsyncThunk(
   "campers/fetchAll",
-  async (_, thunkAPI) => {
-    const url = "/campers/?page=1&limit=4";
+  async (params, thunkAPI) => {
+    const url = "/campers/";
     try {
-      const { data } = await api.get(url);
+      const { data } = await api.get(url, {
+        params: params,
+      });
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);

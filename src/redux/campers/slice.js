@@ -11,6 +11,9 @@ const slice = createSlice({
     builder.addCase(fetchCampers.fulfilled, (state, { payload }) => {
       state.items = payload.items;
     });
+    builder.addCase(fetchCampers.rejected, (state, { error }) => {
+      state.items = [];
+    });
     builder.addCase(fetchCamperDetail.fulfilled, (state, { payload }) => {
       state.camper = payload;
     });

@@ -1,1 +1,2 @@
-export const selectNameFilter = (state) => state.filters.name;
+export const selectSearchFilter = (state) => state.filters.search;
+export const selectPageFilter = (state) => state.filters.paginator;
