@@ -5,14 +5,29 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url("/cta@1x.png");
+  background-image: "/public/cta@1x.png";
   font-style: normal;
   color: white;
   height: calc(100vh - 72px);
+  position: relative;
+  overflow: hidden;
 }
 .wrap {
-  padding: 260px 0;
-  margin-left: 64px;
 }
-.title {
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 72px);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 260px 0;
+  margin: 0;
+  margin-left: 64px;
 }

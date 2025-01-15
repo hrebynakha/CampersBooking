@@ -2,7 +2,11 @@
   padding: 0;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
+
 .links {
   display: flex;
   align-items: center;
@@ -10,10 +14,10 @@
   gap: 32px;
 }
 .link {
-  background-color: aqua;
-  padding: 10px;
+  color: #101828;
+  text-decoration: none;
 }
 
 .link.active {
-  background-color: green;
+  color: #d84343;
 }

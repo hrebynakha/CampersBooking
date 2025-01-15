@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Container from "../Container/Container";
 import Header from "../Header/Header";
+import { Toaster } from "react-hot-toast";
 
 const LayoutGray = () => {
   return (
@@ -9,6 +10,7 @@ const LayoutGray = () => {
       <Container>
         <Outlet />
       </Container>
+      <Toaster />
     </>
   );
 };

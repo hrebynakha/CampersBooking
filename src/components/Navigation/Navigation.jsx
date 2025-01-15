@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import css from "./Navigation.module.css";
+import Logo from "../Logo/Logo";
 
 const Navigation = () => {
   const buildLinkClass = ({ isActive }) => {
@@ -9,7 +10,7 @@ const Navigation = () => {
   return (
     <nav className={css.nav}>
       <NavLink to="/" className={css.logo}>
-        Travel<span>Truck</span>
+        <Logo />
       </NavLink>
       <div className={css.links}>
         <NavLink to="/" className={buildLinkClass}>
