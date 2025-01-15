@@ -12,8 +12,6 @@
   position: relative;
   overflow: hidden;
 }
-.wrap {
-}
 .video {
   position: absolute;
   top: 0;
@@ -30,4 +28,19 @@
   padding: 260px 0;
   margin: 0;
   margin-left: 64px;
+  color: var(--inputs);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  margin-bottom: 16px;
+}
+
+.desc {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  margin-bottom: 40px;
 }

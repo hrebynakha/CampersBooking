@@ -1,15 +1,27 @@
-.btn-link {
+.btnLink {
   color: var(--cl-white);
   display: flex;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 200px;
   width: 166px;
   padding: 16px 40px;
   outline: transparent;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: var(--anim-fast);
+  transition-property: background-color;
+}
+
+.btnLink.red {
   background-color: var(--cl-red);
 }
 
-.btn-link:hover,
-.btn-link:active {
+.btnLink.red:hover,
+.btnLink.red:active {
   background-color: var(--cl-red-accent);
 }

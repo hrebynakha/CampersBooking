@@ -8,7 +8,6 @@ import TabPanel from "@mui/lab/TabPanel";
 import { selectCamper } from "../../redux/campers/selectors";
 import css from "./CamperDetail.module.css";
 import CamperGallery from "../CamperGallery/CamperGallery";
-import EquimentsList from "../EquimentsList/EquimentsList";
 import { useState } from "react";
 import CamperReviews from "../CamperReviews/CamperReviews";
 import BookingForm from "../BookingForm/BookingForm";

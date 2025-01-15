@@ -1,10 +1,15 @@
 .nav {
-  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo {
   display: flex;
   align-items: center;
   justify-content: start;
+  flex-shrink: 0;
+  z-index: 1;
 }
 
 .links {
@@ -12,10 +17,16 @@
   align-items: center;
   justify-content: center;
   gap: 32px;
+  flex-grow: 1;
+  margin-left: -136px;
 }
 .link {
   color: #101828;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
 }
 
 .link.active {

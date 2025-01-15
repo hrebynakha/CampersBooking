@@ -4,9 +4,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { ensureMinItems } from "../../utils/helpers/helpers";
 
 const CamperGallery = ({ gallery, name }) => {
-  const galleryItems = gallery.length <= 4 ? [...gallery, ...gallery] : gallery;
+  const galleryItems = ensureMinItems(gallery);
   return (
     <Swiper
       spaceBetween={48}
