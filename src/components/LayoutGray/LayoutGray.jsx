@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 const LayoutGray = () => {
   return (
     <>
-      <Header style="gray" />
+      <Header />
       <Container>
         <Outlet />
       </Container>

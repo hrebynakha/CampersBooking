@@ -24,7 +24,7 @@ const CampersSearchForm = ({ onSubmit }) => {
       validationSchema={campersForm.schema}
     >
       {({ values, setFieldValue }) => (
-        <Form className={css.form}>
+        <Form className={css.form} style={{ display: "block" }}>
           <div className={css.formField}>
             <label htmlFor="location">Location</label>
             <div className={css.inputWrap}>

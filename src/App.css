@@ -14,14 +14,39 @@
   letter-spacing: -0.01em;
   color: var(--white);
   transition: var(--anim-fast);
-  transition-property: background-color;
+  outline: transparent;
 }
 
 .btnLink.red {
+  transition-property: background-color;
   background-color: var(--cl-red);
 }
 
 .btnLink.red:hover,
 .btnLink.red:active {
   background-color: var(--cl-red-accent);
+}
+
+.btnLink.white {
+  border: 1px solid var(--gray-light);
+  transition-property: border-color;
+  background-color: var(--white);
+  color: var(--main);
+}
+.btnLink.white:hover,
+.btnLink.white:active {
+  border: 1px solid var(--button-hover-red);
+}
+
+.btnLike {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  transition: var(--anim-fast);
+  transition-property: background-color;
+  outline: transparent;
+  cursor: pointer;
 }

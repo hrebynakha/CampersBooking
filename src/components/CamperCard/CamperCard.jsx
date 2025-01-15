@@ -1,6 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import EquimentsList from "../EquimentsList/EquimentsList";
 import css from "./CamperCard.module.css";
+import Icon from "../Icon/Icon";
+import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
+import { Rating } from "@mui/material";
 
 const CamperCard = ({ camper }) => {
   const location = useLocation();
@@ -14,14 +17,19 @@ const CamperCard = ({ camper }) => {
       />
       <div className={css.info}>
         <div className={css.mainInfo}>
-          <span>{camper.name}</span>
-          <div className={css.price}>
-            <span>{camper.price}</span>
-            <button className={css.btnLike}>Like</button>
+          <span className={css.title}>{camper.name}</span>
+          <div className={css.priceWrap}>
+            <h4 className={css.price}>
+              {trasnformToCurrencyText(camper.price)}
+            </h4>
+            <button className="btnLike">
+              <Icon name={"like"} color={"black"} size={24} />
+            </button>
           </div>
         </div>
         <div className={css.secondaryInfo}>
           <span>
+            <Rating max={1} value={camper.rating} readOnly />
             {camper.rating}({camper.reviews.length} Reviews)
           </span>
           <span>{camper.location}</span>
@@ -31,7 +39,7 @@ const CamperCard = ({ camper }) => {
         <Link
           to={"/catalog/" + camper.id}
           state={location}
-          className="btn-link"
+          className="btnLink red"
         >
           Show more
         </Link>

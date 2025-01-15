@@ -13,7 +13,7 @@ const CampersList = () => {
   const totalResults = useSelector(selectTotalResults);
   const campers = useSelector(selectCampersItems);
   return (
-    <div>
+    <div className={css.scroll}>
       {campers.length > 0 ? (
         <>
           <ul className={css.list}>

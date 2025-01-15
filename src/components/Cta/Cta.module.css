@@ -8,7 +8,7 @@
   background-image: "/public/cta@1x.png";
   font-style: normal;
   color: white;
-  height: calc(100vh - 72px);
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - 72px);
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
 }
