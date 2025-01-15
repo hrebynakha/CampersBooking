@@ -15,7 +15,10 @@
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  flex-grow: 1;
+  gap: 24px;
+}
+.info .secondaryInfo {
+  gap: 8px;
 }
 .img {
   border-radius: 10px;
