@@ -12,8 +12,14 @@ const slice = createSlice({
         items: [...state.items, ...payload],
       };
     },
+    removeFavoriteItem: (state, { payload }) => {
+      return {
+        ...state,
+        items: state.items.filter((camper) => camper !== payload),
+      };
+    },
   },
 });
 
-export const { addFavoriteItem } = slice.actions;
+export const { addFavoriteItem, removeFavoriteItem } = slice.actions;
 export const favoritesReducer = slice.reducer;

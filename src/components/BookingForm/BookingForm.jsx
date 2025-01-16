@@ -79,8 +79,8 @@ const BookingForm = ({ onSubmit }) => {
               {(msg) => <div className={css.error}>{msg}</div>}
             </ErrorMessage>
           </div>
-          <button type="submit" className={css.btn}>
-            Add contact
+          <button type="submit" className="btnMain red">
+            Send
           </button>
         </Form>
       )}

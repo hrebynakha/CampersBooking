@@ -39,13 +39,9 @@ const slice = createSlice({
         state.filter.page === 1
           ? payload.items
           : [...state.items, ...payload.items];
-      // const newItems = payload.items.filter(
-      //   (item) => !state.items.some((existing) => existing.id === item.id)
-      // );
-      // state.items.push(...newItems);
       state.totalResults = payload.total;
     });
-    builder.addCase(fetchCampers.rejected, (state, { error }) => {
+    builder.addCase(fetchCampers.rejected, (state) => {
       state.items = [];
     });
     builder.addCase(fetchCamperDetail.fulfilled, (state, { payload }) => {

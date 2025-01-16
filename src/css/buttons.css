@@ -1,0 +1,89 @@
+.btnLink {
+  color: var(--cl-white);
+  display: flex;
+  align-items: center;
+  border-radius: 200px;
+  width: 166px;
+  padding: 16px 40px;
+  outline: transparent;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: var(--anim-fast);
+  outline: transparent;
+}
+
+.btnLink.red {
+  transition-property: background-color;
+  background-color: var(--cl-red);
+}
+
+.btnLink.red:hover,
+.btnLink.red:active {
+  background-color: var(--cl-red-accent);
+}
+
+.btnLink.white {
+  border: 1px solid var(--gray-light);
+  transition-property: border-color;
+  background-color: var(--white);
+  color: var(--main);
+}
+.btnLink.white:hover,
+.btnLink.white:active {
+  border: 1px solid var(--button-hover-red);
+}
+
+.btnLike {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  transition: var(--anim-fast);
+  transition-property: background-color;
+  outline: transparent;
+  cursor: pointer;
+}
+.btnLike > .liked {
+  fill: var(--cl-red);
+}
+
+.btnLike > .liked {
+  fill: var(--cl-red);
+}
+.btnMain {
+  color: var(--cl-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 200px;
+  width: 166px;
+  padding: 16px 40px;
+  outline: transparent;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: var(--anim-fast);
+  outline: transparent;
+  border: none;
+  text-align: center;
+}
+.btnMain.red {
+  transition-property: background-color;
+  background-color: var(--cl-red);
+}
+
+.btnMain.red:hover,
+.btnMain.red:active {
+  background-color: var(--cl-red-accent);
+}

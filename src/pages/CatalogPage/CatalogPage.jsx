@@ -7,6 +7,7 @@ import { fetchCampers } from "../../redux/campers/operations";
 import { useSearchParams } from "react-router-dom";
 import { changeSearchFilter } from "../../redux/campers/slice";
 import { selectFilter } from "../../redux/campers/selectors";
+import ToTopBtn from "../../components/ToTopBtn/ToToBtn";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const CatalogPage = () => {
     <div className={css.wrap}>
       <CampersSearchForm onSubmit={handleSearch} />
       <CampersList />
+      <ToTopBtn />
     </div>
   );
 };

@@ -3,10 +3,13 @@ import EquimentsList from "../EquimentsList/EquimentsList";
 import css from "./CamperCard.module.css";
 import Icon from "../Icon/Icon";
 import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
-import { Rating } from "@mui/material";
+import { selectFavoriteItems } from "../../redux/favorites/selectors";
+import { useSelector } from "react-redux";
+import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
 
-const CamperCard = ({ camper }) => {
+const CamperCard = ({ camper, onLike }) => {
   const location = useLocation();
+  const favoritesItems = useSelector(selectFavoriteItems);
 
   return (
     <div className={css.item}>
@@ -22,23 +25,21 @@ const CamperCard = ({ camper }) => {
             <h4 className={css.price}>
               {trasnformToCurrencyText(camper.price)}
             </h4>
-            <button className="btnLike">
-              <Icon name={"like"} color={"black"} size={24} />
+            <button className="btnLike" onClick={onLike}>
+              <Icon
+                name={"like"}
+                color={"black"}
+                size={24}
+                className={favoritesItems.includes(camper.id) ? "liked" : ""}
+              />
             </button>
           </div>
         </div>
-        <div className={css.secondaryInfo}>
-          <div className={css.rating}>
-            <Rating max={1} value={camper.rating} readOnly />
-            <span className={css.ratingValue}>
-              {camper.rating}({camper.reviews.length} Reviews)
-            </span>
-          </div>
-          <div className={css.location}>
-            <Icon name="location" color="black" size={16} />
-            <span>{camper.location}</span>
-          </div>
-        </div>
+        <CamperSecondaryInfo
+          rating={camper.rating}
+          reviewsCount={camper.reviews.lenght}
+          location={camper.location}
+        />
         <span className={css.description}>{camper.description}</span>
         <div className={css.equimentsList}>
           <EquimentsList camper={camper} />

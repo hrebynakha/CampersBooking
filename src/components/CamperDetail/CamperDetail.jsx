@@ -13,6 +13,8 @@ import CamperReviews from "../CamperReviews/CamperReviews";
 import BookingForm from "../BookingForm/BookingForm";
 import CamperFeatures from "../CamperFeatures/CamperFeatures";
 import toast from "react-hot-toast";
+import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
+import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
 
 const CamperDetail = () => {
   const camper = useSelector(selectCamper);
@@ -25,22 +27,22 @@ const CamperDetail = () => {
   };
   return camper ? (
     <div>
-      <h1>{camper.name}</h1>
-      <div className={css.secondaryInfo}>
-        <span>
-          {camper.rating}({camper.reviews.length} Reviews)
-        </span>
-        <span>{camper.location}</span>
-      </div>
-      <span>{camper.price}</span>
+      <h1 className={css.mainInfo}>{camper.name}</h1>
+      <CamperSecondaryInfo
+        rating={camper.rating}
+        reviewsCount={camper.reviews.lenght}
+        location={camper.location}
+      />
+      <h4 className={css.price}>{trasnformToCurrencyText(camper.price)}</h4>
       <CamperGallery gallery={camper.gallery} name={camper.name} />
       <p className={css.desc}> {camper.description}</p>
       <div>
         <Box sx={{ width: "100%", typography: "body1" }}>
           <TabContext value={tabOpened}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Box sx={{ borderBottom: 1, borderColor: "#dadde1" }}>
               <TabList
                 onChange={handleChange}
+                className={css.tab}
                 aria-label="lab API tabs example"
               >
                 <Tab label="Features" value="1" />

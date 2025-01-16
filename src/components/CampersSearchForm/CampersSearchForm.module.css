@@ -16,7 +16,7 @@
 }
 
 .locationInput {
-  background-color: var(--gray-light);
+  background-color: var(--inputs);
   color: var(--main);
   border-radius: 12px;
   padding: 18px;
@@ -29,13 +29,20 @@
   border: none;
   outline: transparent;
 }
+.locationInput::placeholder {
+  font-family: var(--font-family);
+}
+.locationInput:hover,
+.locationInput:focus + .icon {
+  fill: var(--main);
+}
 .icon {
   position: absolute;
   position: absolute;
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
-  fill: var(--navy-blue);
+  fill: var(--gray);
   stroke: none;
   transition: fill var(--anim-fast);
 }
@@ -57,7 +64,24 @@
   font-size: 20px;
   line-height: 120%;
   color: var(--main);
+  margin-top: 32px;
+  position: relative;
+  padding-bottom: 24px;
 }
+.label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 360px;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.equipment {
+  margin-top: 24px;
+}
+
 .checkbox {
   border: 1px solid var(--gray-light);
   border-radius: 12px;
@@ -80,4 +104,12 @@
 input[type="checkbox"]:checked + .checkbox {
   border: 1px solid var(--cl-red);
   background-color: var(--cl-red);
+}
+
+.vehicle {
+  margin-top: 24px;
+}
+
+.btn {
+  margin-top: 40px;
 }

@@ -51,51 +51,55 @@ const CampersSearchForm = ({ onSubmit }) => {
           </div>
           <span className={css.filtersTitle}>Filters</span>
           <div className={css.label}>Vehicle equipment</div>
-          <label>
-            <div className={css.checkbox}>
-              <Icon name="ac" color="black" size={32} />
-              AC
-            </div>
-            <Field
-              type="checkbox"
-              name="AC"
-              className={clsx(css.checkItem, "visuallyHidden")}
-            />
-          </label>
-          <label>
-            <Field type="checkbox" name="transmission" value="automatic" />
-            Automatic
-          </label>
-          <label>
-            <Field type="checkbox" name="kitchen" />
-            Kithen
-          </label>
-          <label>
-            <Field type="checkbox" name="TV" />
-            TV
-          </label>
-          <label>
-            <Field type="checkbox" name="bathroom" />
-            Bathroom
-          </label>
-          <div className={css.label}>Vehicle type</div>
-          <div role="group" aria-labelledby="my-radio-group">
+          <div className={css.equipment}>
             <label>
-              <Field type="radio" name="form" value="panelTruck" />
-              Van
+              <div className={css.checkbox}>
+                <Icon name="ac" color="black" size={32} />
+                AC
+              </div>
+              <Field
+                type="checkbox"
+                name="AC"
+                className={clsx(css.checkItem, "visuallyHidden")}
+              />
             </label>
             <label>
-              <Field type="radio" name="form" value="fullyIntegrated" />
-              Fully Integrated
+              <Field type="checkbox" name="transmission" value="automatic" />
+              Automatic
             </label>
             <label>
-              <Field type="radio" name="form" value="alcove" />
-              Alcove
+              <Field type="checkbox" name="kitchen" />
+              Kithen
+            </label>
+            <label>
+              <Field type="checkbox" name="TV" />
+              TV
+            </label>
+            <label>
+              <Field type="checkbox" name="bathroom" />
+              Bathroom
             </label>
           </div>
-          <button type="submit" className={css.btn}>
-            Search
-          </button>
+          <div className={css.label}>Vehicle type</div>
+          <div className={css.vehicle}>
+            <div role="group" aria-labelledby="my-radio-group">
+              <label>
+                <Field type="radio" name="form" value="panelTruck" />
+                Van
+              </label>
+              <label>
+                <Field type="radio" name="form" value="fullyIntegrated" />
+                Fully Integrated
+              </label>
+              <label>
+                <Field type="radio" name="form" value="alcove" />
+                Alcove
+              </label>
+            </div>
+            <button type="submit" className={clsx("btnMain", "red", css.btn)}>
+              Search
+            </button>
+          </div>
         </Form>
       )}
     </Formik>

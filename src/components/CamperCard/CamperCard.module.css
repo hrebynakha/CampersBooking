@@ -31,14 +31,6 @@
   width: 100%;
 }
 
-.secondaryInfo {
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  width: 100%;
-  gap: 16px;
-}
-
 .description {
   text-align: start;
   display: -webkit-box;
@@ -68,18 +60,7 @@
   line-height: 133%;
   color: var(--main);
 }
-.rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-.location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
+
 .equimentsList {
   margin-top: 24px;
   display: flex;
