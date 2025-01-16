@@ -2,6 +2,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import css from "./CampersSearchForm.module.css";
+import Icon from "../Icon/Icon";
+import clsx from "clsx";
 
 const CampersSearchForm = ({ onSubmit }) => {
   const campersForm = {
@@ -24,25 +26,41 @@ const CampersSearchForm = ({ onSubmit }) => {
       validationSchema={campersForm.schema}
     >
       {({ values, setFieldValue }) => (
-        <Form className={css.form} style={{ display: "block" }}>
-          <div className={css.formField}>
-            <label htmlFor="location">Location</label>
-            <div className={css.inputWrap}>
-              <Field
-                id="location"
-                name="location"
-                placeholder="Location"
-              ></Field>
-            </div>
+        <Form className={css.form}>
+          <div className={css.location}>
+            <label htmlFor="location" className={css.locationLabel}>
+              Location
+              <div className={css.inputWrap}>
+                <Field
+                  id="location"
+                  name="location"
+                  placeholder="Location"
+                  className={css.locationInput}
+                ></Field>
+                <Icon
+                  name="location"
+                  color="black"
+                  size={20}
+                  className={css.icon}
+                />
+              </div>
+            </label>
             <ErrorMessage name="location">
               {(msg) => <div className={css.error}>{msg}</div>}
             </ErrorMessage>
           </div>
-          <span>Filters</span>
+          <span className={css.filtersTitle}>Filters</span>
           <div className={css.label}>Vehicle equipment</div>
           <label>
-            <Field type="checkbox" name="AC" />
-            AC
+            <div className={css.checkbox}>
+              <Icon name="ac" color="black" size={32} />
+              AC
+            </div>
+            <Field
+              type="checkbox"
+              name="AC"
+              className={clsx(css.checkItem, "visuallyHidden")}
+            />
           </label>
           <label>
             <Field type="checkbox" name="transmission" value="automatic" />

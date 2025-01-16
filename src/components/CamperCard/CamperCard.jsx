@@ -28,21 +28,28 @@ const CamperCard = ({ camper }) => {
           </div>
         </div>
         <div className={css.secondaryInfo}>
-          <span>
+          <div className={css.rating}>
             <Rating max={1} value={camper.rating} readOnly />
-            {camper.rating}({camper.reviews.length} Reviews)
-          </span>
-          <span>{camper.location}</span>
+            <span className={css.ratingValue}>
+              {camper.rating}({camper.reviews.length} Reviews)
+            </span>
+          </div>
+          <div className={css.location}>
+            <Icon name="location" color="black" size={16} />
+            <span>{camper.location}</span>
+          </div>
         </div>
         <span className={css.description}>{camper.description}</span>
-        <EquimentsList camper={camper} />
-        <Link
-          to={"/catalog/" + camper.id}
-          state={location}
-          className="btnLink red"
-        >
-          Show more
-        </Link>
+        <div className={css.equimentsList}>
+          <EquimentsList camper={camper} />
+          <Link
+            to={"/catalog/" + camper.id}
+            state={location}
+            className="btnLink red"
+          >
+            Show more
+          </Link>
+        </div>
       </div>
     </div>
   );

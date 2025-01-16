@@ -15,10 +15,7 @@
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  gap: 24px;
-}
-.info .secondaryInfo {
-  gap: 8px;
+  min-height: 320px;
 }
 .img {
   border-radius: 10px;
@@ -39,6 +36,7 @@
   align-items: start;
   justify-content: start;
   width: 100%;
+  gap: 16px;
 }
 
 .description {
@@ -49,6 +47,7 @@
   -webkit-box-orient: vertical; /* Set the box orientation */
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis;
+  margin-top: 24px;
 }
 
 .title {
@@ -68,4 +67,25 @@
   font-size: 24px;
   line-height: 133%;
   color: var(--main);
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.equimentsList {
+  margin-top: 24px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
+  flex-grow: 1;
 }
