@@ -1,3 +1,10 @@
+@media only screen and (min-width: 1158px) {
+  .checkboxLabel .checkboxContent {
+    width: 100px;
+    height: 84px;
+  }
+}
+
 .checkboxLabel input[type="checkbox"],
 .checkboxLabel input[type="radio"] {
   display: none;
@@ -32,11 +39,4 @@
 
 .checkboxLabel .checkboxContent:hover {
   background-color: var(--inputs);
-}
-
-@media only screen and (min-width: 1158px) {
-  .checkboxLabel .checkboxContent {
-    width: 100px;
-    height: 84px;
-  }
 }

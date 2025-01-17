@@ -4,10 +4,10 @@ import css from "./EquimentsList.module.css";
 const EquimentsList = ({ camper }) => {
   return (
     <div className={css.func}>
-      {camper.AC ? <EquipmentItem name="ac" text="AC" /> : null}
+      {camper.AC ? <EquipmentItem name="AC" text="AC" /> : null}
       {camper.bathroom ? <EquipmentItem name="bathroom" /> : null}
       {camper.kitchen ? <EquipmentItem name="kitchen" text="Kitchen" /> : null}
-      {camper.TV ? <EquipmentItem name="tv" text="TV" /> : null}
+      {camper.TV ? <EquipmentItem name="TV" text="TV" /> : null}
       {camper.radio ? (
         <EquipmentItem name={"ui-radios"} text={"Radio"} />
       ) : null}

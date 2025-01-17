@@ -40,16 +40,21 @@ const CamperDetail = () => {
       <CamperGallery gallery={camper.gallery} name={camper.name} />
       <p className={css.desc}> {camper.description}</p>
       <div>
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: "100%", mb: "80px" }}>
           <TabContext value={tabOpened}>
             <Box sx={{ borderBottom: 1, borderColor: "#dadde1" }}>
               <TabList
                 onChange={handleChange}
-                className={css.tab}
-                aria-label="lab API tabs example"
+                aria-label="Camper tab"
+                TabIndicatorProps={{
+                  style: {
+                    background: "#E44848",
+                    height: "3px",
+                  },
+                }}
               >
-                <Tab label="Features" value="1" />
-                <Tab label="Rewiews" value="2" />
+                <Tab label="Features" value="1" className={css.tab} />
+                <Tab label="Rewiews" value="2" className={css.tab} />
               </TabList>
             </Box>
             <Box display="flex" flexDirection="row" marginTop="44px" gap="40px">
@@ -65,7 +70,11 @@ const CamperDetail = () => {
                   <CamperReviews reviews={camper.reviews} />
                 </TabPanel>
               </Box>
-              <Box flex={1}>
+              <Box flex={1} className={css.form} sx={{ p: "44px 57px" }}>
+                <h4 className={css.formTitle}>Book your campervan now</h4>
+                <p className={css.formDesc}>
+                  Stay connected! We are always ready to help you.
+                </p>
                 <BookingForm onSubmit={handleSubmit} />
               </Box>
             </Box>

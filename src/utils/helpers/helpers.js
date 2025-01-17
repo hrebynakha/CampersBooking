@@ -1,5 +1,7 @@
 export function capitalize(text) {
-  return text[0].toUpperCase() + text.toLowerCase().slice(1);
+  const arr = text.split(/(?=[A-Z])/);
+  const spaced = arr.join(" ");
+  return spaced[0].toUpperCase() + spaced.toLowerCase().slice(1);
 }
 
 export function trasnformToCurrencyText(text) {

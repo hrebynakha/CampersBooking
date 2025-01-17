@@ -23,15 +23,38 @@
   line-height: 150%;
   color: var(--text);
 }
+.tab .Mui-selected {
+  color: #db2215 !important;
+  border-bottom: 2px solid #d22f19 !important;
+}
 .tab {
-  font-family: var(--font-family);
+  font-family: var(--font-family) !important;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main) !important;
+  text-transform: capitalize !important;
+}
+.features {
+  background-color: var(--inputs);
+  border-radius: 10px;
+}
+.form {
+  border-radius: 10px;
+  border: 1px solid var(--gray-light);
+}
+.formTitle {
   font-weight: 600;
   font-size: 20px;
   line-height: 120%;
   color: var(--main);
+  margin-bottom: 8px;
 }
 
-.features {
-  background-color: var(--inputs);
-  border-radius: 10px;
+.formDesc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+  margin-bottom: 24px;
 }

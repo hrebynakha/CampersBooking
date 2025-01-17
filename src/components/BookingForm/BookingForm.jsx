@@ -1,7 +1,7 @@
-import MaskedInput from "react-text-mask";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import css from "./BookingForm.module.css";
+import DateFormField from "../DateFormField/DateFormField";
 
 const BookingForm = ({ onSubmit }) => {
   const contactForm = {
@@ -22,11 +22,12 @@ const BookingForm = ({ onSubmit }) => {
           /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/,
           "Email format must be email@example.com"
         ),
+      bookingDate: Yup.date()
+        .min(new Date(), "Select a date between today")
+        .required("Required"),
     }),
     submit: (values, { resetForm }) => {
-      console.log(values);
       onSubmit(values);
-
       resetForm();
     },
   };
@@ -37,53 +38,61 @@ const BookingForm = ({ onSubmit }) => {
       onSubmit={contactForm.submit}
       validationSchema={contactForm.schema}
     >
-      {({ values, setFieldValue }) => (
-        <Form className={css.form}>
-          <div className={css.formField}>
-            <label htmlFor="name">Name</label>
-            <div className={css.inputWrap}>
-              <Field id="name" name="name" placeholder="Name"></Field>
-            </div>
-            <ErrorMessage name="name">
-              {(msg) => <div className={css.error}>{msg}</div>}
-            </ErrorMessage>
+      <Form className={css.form}>
+        <div className={css.formField}>
+          <label htmlFor="name">Name</label>
+          <div className={css.inputWrap}>
+            <Field id="name" name="name" placeholder="Name*"></Field>
           </div>
-          <div className={css.formField}>
-            <label htmlFor="email">email</label>
-            <div className={css.inputWrap}>
-              <Field type="email" name="email" placeholder="Email" />
-            </div>
-            <ErrorMessage name="email">
-              {(msg) => <div className={css.error}>{msg}</div>}
-            </ErrorMessage>
+          <ErrorMessage name="name">
+            {(msg) => <div className={css.error}>{msg}</div>}
+          </ErrorMessage>
+        </div>
+        <div className={css.formField}>
+          <label htmlFor="email">email</label>
+          <div className={css.inputWrap}>
+            <Field type="email" name="email" placeholder="Email*" />
           </div>
-          <div className={css.formField}>
-            <label htmlFor="bookingDate">Date</label>
-            <div className={css.inputWrap}>
-              <Field
-                id="bookingDate"
-                name="bookingDate"
-                placeholder="bookingDate"
-              ></Field>
-            </div>
-            <ErrorMessage name="bookingDate">
-              {(msg) => <div className={css.error}>{msg}</div>}
-            </ErrorMessage>
+          <ErrorMessage name="email">
+            {(msg) => <div className={css.error}>{msg}</div>}
+          </ErrorMessage>
+        </div>
+
+        <div className={css.formField}>
+          <label htmlFor="bookingDate">Date</label>
+
+          <DateFormField
+            name="bookingDate"
+            id="bookingDate"
+            placeholder="Booking date*"
+          />
+
+          <ErrorMessage name="bookingDate">
+            {(msg) => <div className={css.error}>{msg}</div>}
+          </ErrorMessage>
+        </div>
+        <div className={css.formField}>
+          <label htmlFor="comment">Comment</label>
+          <div className={css.inputWrap}>
+            <Field
+              id="comment"
+              name="comment"
+              type="text"
+              component="textarea"
+              placeholder="Comment"
+              className={css.textarea}
+            />
           </div>
-          <div className={css.formField}>
-            <label htmlFor="comment">Comment</label>
-            <div className={css.inputWrap}>
-              <Field id="comment" name="comment" type="text"></Field>
-            </div>
-            <ErrorMessage name="comment">
-              {(msg) => <div className={css.error}>{msg}</div>}
-            </ErrorMessage>
-          </div>
+          <ErrorMessage name="comment">
+            {(msg) => <div className={css.error}>{msg}</div>}
+          </ErrorMessage>
+        </div>
+        <div className={css.btnWrap}>
           <button type="submit" className="btnMain red">
             Send
           </button>
-        </Form>
-      )}
+        </div>
+      </Form>
     </Formik>
   );
 };

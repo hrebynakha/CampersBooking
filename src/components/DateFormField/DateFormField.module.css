@@ -1,0 +1,23 @@
+.date {
+  min-width: 576px;
+  color: var(--inputs);
+}
+.calendar {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--inputs);
+}
+.day {
+  border-radius: 32px !important;
+  width: 36px;
+  height: 32px;
+  transition: var(--anim-fast);
+  transition-property: background-color;
+  font-family: var(--font-family);
+}
+.day[aria-selected="true"] {
+  background-color: var(--text) !important;
+}
