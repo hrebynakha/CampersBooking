@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import css from "./CampersSearchForm.module.css";
 import Icon from "../Icon/Icon";
 import clsx from "clsx";
+import CamperFilterItem from "../CamperFilterItem/CamperFilterItem";
 
 const CampersSearchForm = ({ onSubmit }) => {
   const campersForm = {
@@ -16,7 +17,10 @@ const CampersSearchForm = ({ onSubmit }) => {
         .max(30, "Must be 30 characters or less"),
     }),
     submit: (values) => {
-      onSubmit(values);
+      const filteredValues = Object.fromEntries(
+        Object.entries(values).filter(([_, value]) => value !== false)
+      );
+      onSubmit(filteredValues);
     },
   };
   return (
@@ -52,54 +56,49 @@ const CampersSearchForm = ({ onSubmit }) => {
           <span className={css.filtersTitle}>Filters</span>
           <div className={css.label}>Vehicle equipment</div>
           <div className={css.equipment}>
-            <label>
-              <div className={css.checkbox}>
-                <Icon name="ac" color="black" size={32} />
-                AC
-              </div>
-              <Field
-                type="checkbox"
-                name="AC"
-                className={clsx(css.checkItem, "visuallyHidden")}
-              />
-            </label>
-            <label>
-              <Field type="checkbox" name="transmission" value="automatic" />
-              Automatic
-            </label>
-            <label>
-              <Field type="checkbox" name="kitchen" />
-              Kithen
-            </label>
-            <label>
-              <Field type="checkbox" name="TV" />
-              TV
-            </label>
-            <label>
-              <Field type="checkbox" name="bathroom" />
-              Bathroom
-            </label>
+            <CamperFilterItem name="ac" text="AC" />
+            <CamperFilterItem
+              name="transmission"
+              value="automatic"
+              text="Automatic"
+            />
+            <CamperFilterItem name="TV" text="TV" />
+            <CamperFilterItem name="kitchen" text="Kitchen" />
+            <CamperFilterItem name="bathroom" text="Bathroom" />
           </div>
           <div className={css.label}>Vehicle type</div>
-          <div className={css.vehicle}>
-            <div role="group" aria-labelledby="my-radio-group">
-              <label>
-                <Field type="radio" name="form" value="panelTruck" />
-                Van
-              </label>
-              <label>
-                <Field type="radio" name="form" value="fullyIntegrated" />
-                Fully Integrated
-              </label>
-              <label>
-                <Field type="radio" name="form" value="alcove" />
-                Alcove
-              </label>
-            </div>
-            <button type="submit" className={clsx("btnMain", "red", css.btn)}>
-              Search
-            </button>
+
+          <div
+            role="group"
+            aria-labelledby="my-radio-group"
+            className={css.vehicle}
+          >
+            <CamperFilterItem
+              type="radio"
+              name="form"
+              value="panelTruck"
+              text="Van"
+              iconId="grid1x2"
+            />
+
+            <CamperFilterItem
+              type="radio"
+              name="form"
+              value="fullyIntegrated"
+              text="Fully Integrated"
+              iconId="grid2x2"
+            />
+            <CamperFilterItem
+              type="radio"
+              name="form"
+              value="alcove"
+              text="Alcove"
+              iconId="grid3x3"
+            />
           </div>
+          <button type="submit" className={clsx("btnMain", "red", css.btn)}>
+            Search
+          </button>
         </Form>
       )}
     </Formik>

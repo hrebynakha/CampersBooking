@@ -26,7 +26,7 @@ const slice = createSlice({
       .addMatcher(
         (action) => action.type.endsWith("/rejected"),
         (state, { error, payload }) => {
-          state.error = payload ? payload.response.data : error;
+          state.error = payload.message ? payload.message : error;
           state.loading = false;
         }
       )

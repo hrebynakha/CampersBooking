@@ -29,6 +29,7 @@
   border: none;
   outline: transparent;
 }
+
 .locationInput::placeholder {
   font-family: var(--font-family);
 }
@@ -78,38 +79,24 @@
   border-bottom: 1px solid var(--gray-light);
 }
 
-.equipment {
-  margin-top: 24px;
-}
-
-.checkbox {
-  border: 1px solid var(--gray-light);
-  border-radius: 12px;
-  width: 112px;
-  height: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: var(--main);
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked + .checkbox {
-  border: 1px solid var(--cl-red);
-  background-color: var(--cl-red);
-}
-
+.equipment,
 .vehicle {
   margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
+@media only screen and (min-width: 1158px) {
+  .locationInput {
+    width: 320px;
+  }
+  .label::after {
+    min-width: 320px;
+  }
+}
 .btn {
   margin-top: 40px;
 }

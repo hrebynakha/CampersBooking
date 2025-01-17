@@ -9,7 +9,7 @@ const slice = createSlice({
     addFavoriteItem: (state, { payload }) => {
       return {
         ...state,
-        items: [...state.items, ...payload],
+        items: [...state.items, payload],
       };
     },
     removeFavoriteItem: (state, { payload }) => {

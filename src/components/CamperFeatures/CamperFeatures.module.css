@@ -1,0 +1,18 @@
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 360px;
+  border-bottom: 1px solid var(--white);
+}

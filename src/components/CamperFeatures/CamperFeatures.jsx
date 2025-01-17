@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import EquimentsList from "../EquimentsList/EquimentsList";
 import { selectCamper } from "../../redux/campers/selectors";
+import css from "./CamperFeatures.module.css";
 
 const CamperFeatures = () => {
   const camper = useSelector(selectCamper);
   return (
     <div>
       <EquimentsList camper={camper} />
-      <div>Vehicle details</div>
+      <div className={css.title}>Vehicle details</div>
       <ul>
         <li>
           <div>Form</div>

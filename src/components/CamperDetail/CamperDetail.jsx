@@ -15,9 +15,12 @@ import CamperFeatures from "../CamperFeatures/CamperFeatures";
 import toast from "react-hot-toast";
 import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
 import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
+import { selectLoading } from "../../redux/root/selectors";
+import NotFoundError from "../NotFoundError/NotFoundError";
 
 const CamperDetail = () => {
   const camper = useSelector(selectCamper);
+  const loading = useSelector(selectLoading);
   const [tabOpened, setTabOpened] = useState("1");
   const handleChange = (e, newValue) => {
     setTabOpened(newValue);
@@ -37,7 +40,7 @@ const CamperDetail = () => {
       <CamperGallery gallery={camper.gallery} name={camper.name} />
       <p className={css.desc}> {camper.description}</p>
       <div>
-        <Box sx={{ width: "100%", typography: "body1" }}>
+        <Box sx={{ width: "100%" }}>
           <TabContext value={tabOpened}>
             <Box sx={{ borderBottom: 1, borderColor: "#dadde1" }}>
               <TabList
@@ -49,16 +52,20 @@ const CamperDetail = () => {
                 <Tab label="Rewiews" value="2" />
               </TabList>
             </Box>
-            <Box display="flex" flexDirection="row" marginTop={2}>
-              <Box flex={1} padding={2}>
-                <TabPanel value="1">
+            <Box display="flex" flexDirection="row" marginTop="44px" gap="40px">
+              <Box flex={1}>
+                <TabPanel
+                  value="1"
+                  className={css.features}
+                  sx={{ p: "44px 52px" }}
+                >
                   <CamperFeatures camper={camper} />
                 </TabPanel>
                 <TabPanel value="2">
                   <CamperReviews reviews={camper.reviews} />
                 </TabPanel>
               </Box>
-              <Box flex={1} padding={2} bgcolor="lightgray">
+              <Box flex={1}>
                 <BookingForm onSubmit={handleSubmit} />
               </Box>
             </Box>
@@ -67,7 +74,7 @@ const CamperDetail = () => {
       </div>
     </div>
   ) : (
-    <h1> Not found</h1>
+    !loading && <NotFoundError />
   );
 };
 

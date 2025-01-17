@@ -1,0 +1,42 @@
+.checkboxLabel input[type="checkbox"],
+.checkboxLabel input[type="radio"] {
+  display: none;
+}
+
+.checkboxLabel .checkboxContent {
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  width: 112px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--main);
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"]:checked + .checkboxContent,
+.checkboxLabel input[type="radio"]:checked + .checkboxContent {
+  /* background-color: #4caf50;
+  border-color: #4caf50;
+  color: white; */
+  border: 1px solid var(--cl-red);
+}
+
+.checkboxLabel .checkboxContent:hover {
+  background-color: var(--inputs);
+}
+
+@media only screen and (min-width: 1158px) {
+  .checkboxLabel .checkboxContent {
+    width: 100px;
+    height: 84px;
+  }
+}

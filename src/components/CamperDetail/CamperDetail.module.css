@@ -30,3 +30,8 @@
   line-height: 120%;
   color: var(--main);
 }
+
+.features {
+  background-color: var(--inputs);
+  border-radius: 10px;
+}

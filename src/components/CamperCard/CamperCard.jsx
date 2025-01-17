@@ -4,13 +4,28 @@ import css from "./CamperCard.module.css";
 import Icon from "../Icon/Icon";
 import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
 import { selectFavoriteItems } from "../../redux/favorites/selectors";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
+import {
+  addFavoriteItem,
+  removeFavoriteItem,
+} from "../../redux/favorites/slice";
+import toast from "react-hot-toast";
 
-const CamperCard = ({ camper, onLike }) => {
+const CamperCard = ({ camper }) => {
   const location = useLocation();
+  const dispatch = useDispatch();
   const favoritesItems = useSelector(selectFavoriteItems);
 
+  const handleLikeClick = () => {
+    if (favoritesItems.includes(camper.id)) {
+      dispatch(removeFavoriteItem(camper.id));
+      toast.success("You can alway return it back :)");
+      return;
+    }
+    dispatch(addFavoriteItem(camper.id));
+    toast.success("We remember that!");
+  };
   return (
     <div className={css.item}>
       <img
@@ -25,7 +40,7 @@ const CamperCard = ({ camper, onLike }) => {
             <h4 className={css.price}>
               {trasnformToCurrencyText(camper.price)}
             </h4>
-            <button className="btnLike" onClick={onLike}>
+            <button className="btnLike" onClick={handleLikeClick}>
               <Icon
                 name={"like"}
                 color={"black"}
