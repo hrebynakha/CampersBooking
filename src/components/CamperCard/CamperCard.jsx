@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 
-import EquimentsList from "../EquimentsList/EquimentsList";
-import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
-import Icon from "../Icon/Icon";
 import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
 import { selectFavoriteItems } from "../../redux/favorites/selectors";
 import {
   addFavoriteItem,
   removeFavoriteItem,
 } from "../../redux/favorites/slice";
+import EquimentsList from "../EquimentsList/EquimentsList";
+import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
+import Icon from "../Icon/Icon";
 import css from "./CamperCard.module.css";
 
 const CamperCard = ({ camper }) => {

@@ -17,6 +17,7 @@ const CampersList = () => {
   const campers = useSelector(selectCampersItems);
   const limit = useSelector(selectFilterPageLimit);
   const loading = useSelector(selectLoading);
+
   return (
     <div>
       {campers.length > 0 ? (

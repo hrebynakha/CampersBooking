@@ -2,18 +2,17 @@ import { NavLink } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { useDispatch } from "react-redux";
 import { changeSearchFilter } from "../../redux/campers/slice";
+import { buildSynonyms } from "../../utils/helpers/helpers";
 import clsx from "clsx";
 import css from "./Cta.module.css";
 
 const Cta = () => {
-  const dreamsSynonyms = [
-    "ambitions",
-    "desires",
-    "visions",
-    "hopes",
-    "ideas",
-    "wishes",
-  ];
+  const sequence = buildSynonyms(
+    "Campers of your dreams",
+    "Campers for yours",
+    ["ambitions", "desires", "visions", "hopes", "ideas", "wishes"],
+    1000
+  );
   const dispatch = useDispatch();
   const handleResetFilters = () => {
     dispatch(changeSearchFilter({}));
@@ -26,24 +25,7 @@ const Cta = () => {
       </video>
       <div className={css.content}>
         <TypeAnimation
-          sequence={[
-            "Campers of your dreams",
-            1000,
-            `Campers for your ${dreamsSynonyms[0]}`,
-            1000,
-            `Campers for your ${dreamsSynonyms[1]}`,
-            1000,
-            `Campers for your ${dreamsSynonyms[2]}`,
-            1000,
-            `Campers for your ${dreamsSynonyms[3]}`,
-            1000,
-            `Campers for your ${dreamsSynonyms[4]}`,
-            1000,
-            `Campers for your ${dreamsSynonyms[5]}`,
-            1000,
-            "Campers of your dreams",
-            1000,
-          ]}
+          sequence={sequence}
           wrapper="h1"
           cursor={false}
           repeat={Infinity}

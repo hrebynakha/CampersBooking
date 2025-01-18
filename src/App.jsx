@@ -12,7 +12,6 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 const LayoutBase = lazy(() => import("./components/LayoutBase/LayoutBase"));
 const LayoutMain = lazy(() => import("./components/LayoutMain/LayoutMain"));
 import Loader from "./components/Loader/Loader";
-
 import "./App.css";
 
 function App() {

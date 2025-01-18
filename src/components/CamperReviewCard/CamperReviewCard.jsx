@@ -1,8 +1,9 @@
 import { Avatar, Rating } from "@mui/material";
+import { getAvatarLetter } from "../../utils/helpers/helpers";
 import css from "./CamperReviewCard.module.css";
 
 const CamperReviewCard = ({ review }) => {
-  const avatarLetter = review.reviewer_name[0].toUpperCase();
+  const avatarLetter = getAvatarLetter(review.reviewer_name[0]);
 
   return (
     <div>
