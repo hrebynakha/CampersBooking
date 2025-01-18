@@ -4,10 +4,10 @@ import Header from "../Header/Header";
 import { Toaster } from "react-hot-toast";
 import Content from "../Content/Content";
 
-const LayoutGray = () => {
+const LayoutMain = () => {
   return (
     <>
-      <Header />
+      <Header fixed={true} />
       <Content>
         <Container>
           <Outlet />
@@ -18,4 +18,4 @@ const LayoutGray = () => {
   );
 };
 
-export default LayoutGray;
+export default LayoutMain;

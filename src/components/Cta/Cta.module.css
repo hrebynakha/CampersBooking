@@ -8,19 +8,18 @@
   background-image: "/public/cta@1x.png";
   font-style: normal;
   color: white;
-  height: 100vh;
-  position: relative;
+  height: calc(100vh - 72px);
   overflow: hidden;
+  position: relative;
 }
 .video {
-  position: absolute;
-  top: 72px;
-  left: 0;
   width: 100%;
-  height: 100vh;
   object-fit: cover;
   z-index: -1;
   filter: brightness(80%);
+  position: absolute;
+  top: 0;
+  height: 100vh;
 }
 
 .content {

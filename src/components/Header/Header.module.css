@@ -1,12 +1,15 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 998;
-  background-color: #f7f7f7;
   height: 72px;
   display: flex;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+  width: 100%;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
 }
