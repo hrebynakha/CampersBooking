@@ -1,9 +1,15 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import clsx from "clsx";
-import css from "./Navigation.module.css";
+import { changeSearchFilter } from "../../redux/campers/slice";
 import Logo from "../Logo/Logo";
+import css from "./Navigation.module.css";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
+  const handleResetFilters = () => {
+    dispatch(changeSearchFilter({}));
+  };
   const buildLinkClass = ({ isActive }) => {
     return clsx(css.link, isActive && css.active);
   };
@@ -16,7 +22,12 @@ const Navigation = () => {
         <NavLink to="/" className={buildLinkClass}>
           Home
         </NavLink>
-        <NavLink to="/catalog" className={buildLinkClass}>
+        <NavLink
+          to="/catalog"
+          className={buildLinkClass}
+          end
+          onClick={handleResetFilters}
+        >
           Catalog
         </NavLink>
       </div>
