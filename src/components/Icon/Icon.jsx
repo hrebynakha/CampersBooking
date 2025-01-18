@@ -5,7 +5,7 @@ const Icon = ({ name, color = "none", size = 32, className = "" }) => {
   return (
     <svg
       className={clsx("icon", `icon-${name}`, className)}
-      style={{ fill: color }}
+      fill={color}
       width={size}
       height={size}
     >
