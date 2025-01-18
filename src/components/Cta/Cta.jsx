@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import { useDispatch } from "react-redux";
+import { changeSearchFilter } from "../../redux/campers/slice";
 import clsx from "clsx";
 import css from "./Cta.module.css";
 
@@ -12,6 +14,10 @@ const Cta = () => {
     "ideas",
     "wishes",
   ];
+  const dispatch = useDispatch();
+  const handleResetFilters = () => {
+    dispatch(changeSearchFilter({}));
+  };
   return (
     <div className={css.cta}>
       <video className={css.video} autoPlay muted loop>
@@ -49,6 +55,7 @@ const Cta = () => {
         <NavLink
           to="/catalog"
           className={clsx("btnLink red btnAnimated", css.btn)}
+          onClick={handleResetFilters}
         >
           View Now
         </NavLink>
