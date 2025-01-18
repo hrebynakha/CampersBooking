@@ -1,7 +1,8 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import css from "./BookingForm.module.css";
+
 import DateFormField from "../DateFormField/DateFormField";
+import css from "./BookingForm.module.css";
 
 const BookingForm = ({ onSubmit }) => {
   const contactForm = {

@@ -1,6 +1,6 @@
-import css from "./EquipmentItem.module.css";
-import Icon from "../Icon/Icon";
 import { capitalize } from "../../utils/helpers/helpers";
+import Icon from "../Icon/Icon";
+import css from "./EquipmentItem.module.css";
 
 const EquipmentItem = ({
   name,

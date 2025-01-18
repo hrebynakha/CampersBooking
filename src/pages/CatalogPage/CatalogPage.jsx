@@ -1,11 +1,12 @@
-import CampersSearchForm from "../../components/CampersSearchForm/CampersSearchForm";
-import CampersList from "../../components/CampersList/CampersList";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-import { fetchCampers } from "../../redux/campers/operations";
+import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+
+import { fetchCampers } from "../../redux/campers/operations";
 import { changeSearchFilter } from "../../redux/campers/slice";
 import { selectFilter } from "../../redux/campers/selectors";
+import CampersList from "../../components/CampersList/CampersList";
+import CampersSearchForm from "../../components/CampersSearchForm/CampersSearchForm";
 import ToTopBtn from "../../components/ToTopBtn/ToToBtn";
 import css from "./CatalogPage.module.css";
 

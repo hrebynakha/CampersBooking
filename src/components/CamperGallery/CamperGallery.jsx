@@ -1,10 +1,11 @@
-import css from "./CamperGallery.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 import { ensureMinItems } from "../../utils/helpers/helpers";
+import css from "./CamperGallery.module.css";
 
 const CamperGallery = ({ gallery, name }) => {
   const galleryItems = ensureMinItems(gallery);

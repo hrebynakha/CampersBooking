@@ -4,12 +4,12 @@ import {
   selectFilterPageLimit,
   selectTotalResults,
 } from "../../redux/campers/selectors";
-import css from "./CampersList.module.css";
-import { incrementPage } from "../../redux/campers/slice";
-import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import CamperCard from "../CamperCard/CamperCard";
 import { selectLoading } from "../../redux/root/selectors";
+import { incrementPage } from "../../redux/campers/slice";
+import CamperCard from "../CamperCard/CamperCard";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import NotFoundError from "../NotFoundError/NotFoundError";
+import css from "./CampersList.module.css";
 
 const CampersList = () => {
   const dispatch = useDispatch();

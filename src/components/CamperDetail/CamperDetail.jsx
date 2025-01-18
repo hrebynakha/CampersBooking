@@ -1,22 +1,22 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import toast from "react-hot-toast";
 
 import { selectCamper } from "../../redux/campers/selectors";
-import css from "./CamperDetail.module.css";
-import CamperGallery from "../CamperGallery/CamperGallery";
-import { useState } from "react";
-import CamperReviews from "../CamperReviews/CamperReviews";
-import BookingForm from "../BookingForm/BookingForm";
-import CamperFeatures from "../CamperFeatures/CamperFeatures";
-import toast from "react-hot-toast";
-import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
-import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
 import { selectLoading } from "../../redux/root/selectors";
+import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
+import BookingForm from "../BookingForm/BookingForm";
+import CamperGallery from "../CamperGallery/CamperGallery";
+import CamperReviews from "../CamperReviews/CamperReviews";
+import CamperFeatures from "../CamperFeatures/CamperFeatures";
+import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
 import NotFoundError from "../NotFoundError/NotFoundError";
+import css from "./CamperDetail.module.css";
 
 const CamperDetail = () => {
   const camper = useSelector(selectCamper);

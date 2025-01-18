@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import css from "./Cta.module.css";
 import { TypeAnimation } from "react-type-animation";
 import clsx from "clsx";
+import css from "./Cta.module.css";
 
 const Cta = () => {
   const dreamsSynonyms = [

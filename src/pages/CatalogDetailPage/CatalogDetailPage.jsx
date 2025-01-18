@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import CamperDetail from "../../components/CamperDetail/CamperDetail";
-import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import CamperDetail from "../../components/CamperDetail/CamperDetail";
 import { fetchCamperDetail } from "../../redux/campers/operations";
 
 const CatalogDetailPage = () => {

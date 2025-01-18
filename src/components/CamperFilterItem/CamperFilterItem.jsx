@@ -1,6 +1,8 @@
 import { Field } from "formik";
-import css from "./CamperFilterItem.module.css";
+
 import Icon from "../Icon/Icon";
+import css from "./CamperFilterItem.module.css";
+
 const CamperFilterItem = ({
   name,
   text,

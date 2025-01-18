@@ -1,9 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import css from "./CampersSearchForm.module.css";
-import Icon from "../Icon/Icon";
 import clsx from "clsx";
+
 import CamperFilterItem from "../CamperFilterItem/CamperFilterItem";
+import Icon from "../Icon/Icon";
+import css from "./CampersSearchForm.module.css";
 
 const CampersSearchForm = ({ onSubmit }) => {
   const campersForm = {

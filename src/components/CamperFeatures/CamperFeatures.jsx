@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
+
 import EquimentsList from "../EquimentsList/EquimentsList";
 import { selectCamper } from "../../redux/campers/selectors";
-import css from "./CamperFeatures.module.css";
 import { capitalize } from "../../utils/helpers/helpers";
+import css from "./CamperFeatures.module.css";
 
 const CamperFeatures = () => {
   const camper = useSelector(selectCamper);
