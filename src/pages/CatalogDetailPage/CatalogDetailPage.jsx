@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import CamperDetail from "../../components/CamperDetail/CamperDetail";
 import { fetchCamperDetail } from "../../redux/campers/operations";
+import CamperDetail from "../../components/CamperDetail/CamperDetail";
 
 const CatalogDetailPage = () => {
   const dispatch = useDispatch();
@@ -11,11 +11,7 @@ const CatalogDetailPage = () => {
     dispatch(fetchCamperDetail(id));
   }, [dispatch, id]);
 
-  return (
-    <div>
-      <CamperDetail />
-    </div>
-  );
+  return <CamperDetail />;
 };
 
 export default CatalogDetailPage;

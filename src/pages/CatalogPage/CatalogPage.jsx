@@ -19,12 +19,14 @@ const CatalogPage = () => {
   );
   const filter = useSelector(selectFilter);
   useEffect(() => {
-    dispatch(changeSearchFilter(params));
+    if (JSON.stringify(params) !== "{}") {
+      dispatch(changeSearchFilter(params));
+    }
   }, [dispatch, params]);
 
   useEffect(() => {
-    dispatch(fetchCampers({ ...params, ...filter }));
-  }, [dispatch, params, filter]);
+    dispatch(fetchCampers({ ...filter }));
+  }, [dispatch, filter]);
 
   const handleSearch = (values) => {
     if (values) setSearchParams(values);

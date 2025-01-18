@@ -15,3 +15,8 @@ export function ensureMinItems(arr, min = 5) {
   }
   return items;
 }
+
+export function getSearchParamFilter() {
+  const params = new URLSearchParams(window.location.search);
+  return Object.fromEntries(params.entries());
+}

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCamperDetail, fetchCampers } from "./operations";
+import { getSearchParamFilter } from "../../utils/helpers/helpers";
 
 const slice = createSlice({
   name: "campers",
@@ -8,6 +9,7 @@ const slice = createSlice({
     totalResults: 0,
     camper: null,
     filter: {
+      ...getSearchParamFilter(),
       page: 1,
       limit: 4,
     },
