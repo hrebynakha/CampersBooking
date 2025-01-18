@@ -52,7 +52,7 @@ const BookingForm = ({ onSubmit }) => {
         <div className={css.formField}>
           <label htmlFor="email">email</label>
           <div className={css.inputWrap}>
-            <Field type="email" name="email" placeholder="Email*" />
+            <Field type="email" id="email" name="email" placeholder="Email*" />
           </div>
           <ErrorMessage name="email">
             {(msg) => <div className="error">{msg}</div>}
