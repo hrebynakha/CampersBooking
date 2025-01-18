@@ -46,7 +46,7 @@ const BookingForm = ({ onSubmit }) => {
             <Field id="name" name="name" placeholder="Name*"></Field>
           </div>
           <ErrorMessage name="name">
-            {(msg) => <div className={css.error}>{msg}</div>}
+            {(msg) => <div className="error">{msg}</div>}
           </ErrorMessage>
         </div>
         <div className={css.formField}>
@@ -55,7 +55,7 @@ const BookingForm = ({ onSubmit }) => {
             <Field type="email" name="email" placeholder="Email*" />
           </div>
           <ErrorMessage name="email">
-            {(msg) => <div className={css.error}>{msg}</div>}
+            {(msg) => <div className="error">{msg}</div>}
           </ErrorMessage>
         </div>
 
@@ -69,7 +69,7 @@ const BookingForm = ({ onSubmit }) => {
           />
 
           <ErrorMessage name="bookingDate">
-            {(msg) => <div className={css.error}>{msg}</div>}
+            {(msg) => <div className="error">{msg}</div>}
           </ErrorMessage>
         </div>
         <div className={css.formField}>
@@ -85,7 +85,7 @@ const BookingForm = ({ onSubmit }) => {
             />
           </div>
           <ErrorMessage name="comment">
-            {(msg) => <div className={css.error}>{msg}</div>}
+            {(msg) => <div className="error">{msg}</div>}
           </ErrorMessage>
         </div>
         <div className={css.btnWrap}>

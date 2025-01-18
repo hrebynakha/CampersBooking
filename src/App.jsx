@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 
-import { selectError, selectLoading } from "./redux/root/selectors";
+import { selectLoading } from "./redux/root/selectors";
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const CatalogDetailPage = lazy(() =>
@@ -11,18 +11,15 @@ const CatalogDetailPage = lazy(() =>
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 const LayoutBase = lazy(() => import("./components/LayoutBase/LayoutBase"));
 const LayoutMain = lazy(() => import("./components/LayoutMain/LayoutMain"));
-const Error = lazy(() => import("./components/Error/Error"));
 import Loader from "./components/Loader/Loader";
 
 import "./App.css";
 
 function App() {
   const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
   return (
     <Suspense fallback={<Loader />}>
       {loading && <Loader />}
-      {error && <Error />}
       <Routes>
         <Route path="/" element={<LayoutBase />}>
           <Route index element={<HomePage />} />

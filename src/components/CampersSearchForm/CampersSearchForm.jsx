@@ -49,7 +49,7 @@ const CampersSearchForm = ({ onSubmit }) => {
             </div>
           </label>
           <ErrorMessage name="location">
-            {(msg) => <div className={css.error}>{msg}</div>}
+            {(msg) => <div className="error">{msg}</div>}
           </ErrorMessage>
         </div>
         <span className={css.filtersTitle}>Filters</span>

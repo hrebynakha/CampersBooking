@@ -98,10 +98,3 @@
 .btn {
   margin-top: 40px;
 }
-.error {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: var(--cl-red);
-}

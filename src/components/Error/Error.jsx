@@ -1,5 +1,14 @@
+import { useSelector } from "react-redux";
+import { selectError } from "../../redux/root/selectors";
+
 const Error = () => {
-  return <div>Ooops, some error happend</div>;
+  const error = useSelector(selectError);
+  return (
+    <div className="error">
+      Ooops, some error happend..
+      <span className="errorDetail">Details: {error}</span>
+    </div>
+  );
 };
 
 export default Error;
