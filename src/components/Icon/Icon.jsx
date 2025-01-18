@@ -2,12 +2,10 @@ import clsx from "clsx";
 import Icons from "../../assets/icons.svg";
 
 const Icon = ({ name, color = "none", size = 32, className = "" }) => {
-  clsx;
-
   return (
     <svg
       className={clsx("icon", `icon-${name}`, className)}
-      fill={color}
+      style={{ fill: color }}
       width={size}
       height={size}
     >

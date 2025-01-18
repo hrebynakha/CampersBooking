@@ -8,17 +8,15 @@ const EquimentsList = ({ camper }) => {
       {camper.bathroom ? <EquipmentItem name="bathroom" /> : null}
       {camper.kitchen ? <EquipmentItem name="kitchen" text="Kitchen" /> : null}
       {camper.TV ? <EquipmentItem name="TV" text="TV" /> : null}
-      {camper.radio ? (
-        <EquipmentItem name={"ui-radios"} text={"Radio"} />
-      ) : null}
+      {camper.radio ? <EquipmentItem name="radio" text={"Radio"} /> : null}
       {camper.refrigerator ? (
-        <EquipmentItem name={"solar-fridge"} text={"Refrigerator"} />
+        <EquipmentItem name="solar-fridge" text="Refrigerator" />
       ) : null}
-      {camper.microwave ? <EquipmentItem name={"microwave"} /> : null}
-      {camper.gas ? <EquipmentItem name={"gas"} color="yellow" /> : null}
-      {camper.water ? (
-        <EquipmentItem name={"ion-water"} text="Water" color="blue" />
+      {camper.microwave ? (
+        <EquipmentItem name="microwave" iconColor="none" />
       ) : null}
+      {camper.gas ? <EquipmentItem name="gas" iconColor="none" /> : null}
+      {camper.water ? <EquipmentItem name="water" iconColor="none" /> : null}
     </div>
   );
 };

@@ -4,9 +4,13 @@
   overflow-y: auto;
   max-height: calc(100vh - 120px);
   display: flex;
-  align-items: self-start;
+  align-items: start;
   justify-content: start;
   flex-direction: column;
+  max-width: 360px;
+}
+.location {
+  width: 100%;
 }
 .locationLabel {
   font-weight: 400;
@@ -21,17 +25,19 @@
   border-radius: 12px;
   padding: 18px;
   padding-left: 48px;
-  width: 360px;
-  height: 56px;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  width: 100%;
   border: none;
   outline: transparent;
 }
 
 .locationInput::placeholder {
   font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
 }
 .locationInput:hover,
 .locationInput:focus + .icon {
@@ -68,6 +74,7 @@
   margin-top: 32px;
   position: relative;
   padding-bottom: 24px;
+  width: 100%;
 }
 .label::after {
   content: "";
@@ -75,7 +82,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  min-width: 360px;
   border-bottom: 1px solid var(--gray-light);
 }
 
@@ -86,17 +92,16 @@
   align-items: center;
   justify-content: start;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 8px 12px;
 }
 
-@media only screen and (min-width: 1158px) {
-  .locationInput {
-    width: 320px;
-  }
-  .label::after {
-    min-width: 320px;
-  }
-}
 .btn {
   margin-top: 40px;
+}
+.error {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--cl-red);
 }

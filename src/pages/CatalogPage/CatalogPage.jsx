@@ -1,5 +1,4 @@
 import CampersSearchForm from "../../components/CampersSearchForm/CampersSearchForm";
-import css from "./CatalogPage.module.css";
 import CampersList from "../../components/CampersList/CampersList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
@@ -8,6 +7,7 @@ import { useSearchParams } from "react-router-dom";
 import { changeSearchFilter } from "../../redux/campers/slice";
 import { selectFilter } from "../../redux/campers/selectors";
 import ToTopBtn from "../../components/ToTopBtn/ToToBtn";
+import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -22,8 +22,8 @@ const CatalogPage = () => {
   }, [dispatch, params]);
 
   useEffect(() => {
-    dispatch(fetchCampers({ ...filter, ...params }));
-  }, [dispatch, filter, params]);
+    dispatch(fetchCampers({ ...params, ...filter }));
+  }, [dispatch, params, filter]);
 
   const handleSearch = (values) => {
     if (values) setSearchParams(values);

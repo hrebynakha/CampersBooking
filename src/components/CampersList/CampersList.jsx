@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCampersItems,
+  selectFilterPageLimit,
   selectTotalResults,
 } from "../../redux/campers/selectors";
 import css from "./CampersList.module.css";
@@ -14,6 +15,7 @@ const CampersList = () => {
   const dispatch = useDispatch();
   const totalResults = useSelector(selectTotalResults);
   const campers = useSelector(selectCampersItems);
+  const limit = useSelector(selectFilterPageLimit);
   const loading = useSelector(selectLoading);
   return (
     <div>
@@ -26,8 +28,12 @@ const CampersList = () => {
               </li>
             ))}
           </ul>
-          {campers.length < totalResults && (
+          {campers.length < totalResults ? (
             <LoadMoreBtn onClick={() => dispatch(incrementPage())} />
+          ) : (
+            campers.length > limit && (
+              <NotFoundError text="No more results to show..." type="centred" />
+            )
           )}
         </>
       ) : (

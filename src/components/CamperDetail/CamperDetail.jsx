@@ -33,7 +33,7 @@ const CamperDetail = () => {
       <h1 className={css.mainInfo}>{camper.name}</h1>
       <CamperSecondaryInfo
         rating={camper.rating}
-        reviewsCount={camper.reviews.lenght}
+        reviewsCount={camper.reviews.length}
         location={camper.location}
       />
       <h4 className={css.price}>{trasnformToCurrencyText(camper.price)}</h4>

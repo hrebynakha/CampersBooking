@@ -9,7 +9,7 @@ const NotFoundPage = () => {
         <p className={css.desc}>
           Ooops...seems like this page is not avaliable
         </p>
-        <Link to="/" className="btnLink red">
+        <Link to="/" className="btnLink red btnAnimated">
           Go home
         </Link>
       </div>

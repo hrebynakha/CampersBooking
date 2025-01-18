@@ -1,19 +1,19 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import toast from "react-hot-toast";
+
 import EquimentsList from "../EquimentsList/EquimentsList";
-import css from "./CamperCard.module.css";
+import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
 import Icon from "../Icon/Icon";
 import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
 import { selectFavoriteItems } from "../../redux/favorites/selectors";
-import { useDispatch, useSelector } from "react-redux";
-import CamperSecondaryInfo from "../CamperSecondaryInfo/CamperSecondaryInfo";
 import {
   addFavoriteItem,
   removeFavoriteItem,
 } from "../../redux/favorites/slice";
-import toast from "react-hot-toast";
+import css from "./CamperCard.module.css";
 
 const CamperCard = ({ camper }) => {
-  const location = useLocation();
   const dispatch = useDispatch();
   const favoritesItems = useSelector(selectFavoriteItems);
 
@@ -52,17 +52,13 @@ const CamperCard = ({ camper }) => {
         </div>
         <CamperSecondaryInfo
           rating={camper.rating}
-          reviewsCount={camper.reviews.lenght}
+          reviewsCount={camper.reviews.length}
           location={camper.location}
         />
         <span className={css.description}>{camper.description}</span>
         <div className={css.equimentsList}>
           <EquimentsList camper={camper} />
-          <Link
-            to={"/catalog/" + camper.id}
-            state={location}
-            className="btnLink red"
-          >
+          <Link to={"/catalog/" + camper.id} className="btnLink red">
             Show more
           </Link>
         </div>

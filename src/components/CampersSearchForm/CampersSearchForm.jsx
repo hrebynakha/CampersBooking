@@ -12,7 +12,7 @@ const CampersSearchForm = ({ onSubmit }) => {
     },
     schema: Yup.object({
       location: Yup.string()
-        .min(3, "too short")
+        .min(3, "Too short")
         .max(30, "Must be 30 characters or less"),
     }),
     submit: (values) => {

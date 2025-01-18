@@ -29,9 +29,9 @@
 }
 .tab {
   font-family: var(--font-family) !important;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 120%;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  line-height: 120% !important;
   color: var(--main) !important;
   text-transform: capitalize !important;
 }

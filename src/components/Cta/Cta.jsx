@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import css from "./Cta.module.css";
 import { TypeAnimation } from "react-type-animation";
+import clsx from "clsx";
 
 const Cta = () => {
   const dreamsSynonyms = [
@@ -45,7 +46,10 @@ const Cta = () => {
         <p className={css.desc}>
           You can find everything you want in our catalog
         </p>
-        <NavLink to="/catalog" className="btnLink red">
+        <NavLink
+          to="/catalog"
+          className={clsx("btnLink red btnAnimated", css.btn)}
+        >
           View Now
         </NavLink>
       </div>

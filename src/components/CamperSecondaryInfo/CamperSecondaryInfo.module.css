@@ -17,3 +17,14 @@
   justify-content: center;
   gap: 4px;
 }
+.ratingValue {
+  position: relative;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--main);
+  text-underline-offset: 4px;
+}
