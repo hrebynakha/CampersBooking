@@ -3,7 +3,12 @@
   margin: 0 auto;
   padding: 0 20px;
 }
-@media only screen and (min-width: 1158px) {
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1158px) {
   .container {
     width: 1158;
   }
