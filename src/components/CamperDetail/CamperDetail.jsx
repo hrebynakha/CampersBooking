@@ -10,6 +10,7 @@ import { formatDistanceToNow } from "date-fns";
 import { selectCamper } from "../../redux/campers/selectors";
 import { selectLoading } from "../../redux/root/selectors";
 import { trasnformToCurrencyText } from "../../utils/helpers/helpers";
+import { feedbackForm } from "../../utils/feedback/feedback";
 import BookingForm from "../BookingForm/BookingForm";
 import CamperGallery from "../CamperGallery/CamperGallery";
 import CamperReviews from "../CamperReviews/CamperReviews";
@@ -29,9 +30,9 @@ const CamperDetail = () => {
     toast.success(
       `Hi, ${contact.name}, we wait for you in ${formatDistanceToNow(
         contact.bookingDate
-      )}`,
-      { removeDelay: 15000 }
+      )}`
     );
+    feedbackForm(contact); // just for user can write owns form logic
   };
   return camper ? (
     <>
