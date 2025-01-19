@@ -4,10 +4,10 @@ import css from "./EquipmentItem.module.css";
 
 const EquipmentItem = ({
   name,
+  text,
   color = "#101828",
   iconColor = "#101828",
   size = 25,
-  text,
 }) => {
   const txt = text ? text : capitalize(name);
   return (

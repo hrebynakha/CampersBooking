@@ -21,7 +21,7 @@ const CatalogPage = () => {
   const filter = useSelector(selectFilter);
   useEffect(() => {
     if (JSON.stringify(params) !== "{}") {
-      // this for  filter state , not change on blank search pram
+      // this for  filter state , not change on blank search param
       dispatch(changeSearchFilter(params));
     }
   }, [dispatch, params]);

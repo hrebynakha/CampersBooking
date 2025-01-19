@@ -4,19 +4,17 @@ import css from "./EquimentsList.module.css";
 const EquimentsList = ({ camper }) => {
   return (
     <div className={css.func}>
-      {camper.AC ? <EquipmentItem name="AC" text="AC" /> : null}
-      {camper.bathroom ? <EquipmentItem name="bathroom" /> : null}
-      {camper.kitchen ? <EquipmentItem name="kitchen" text="Kitchen" /> : null}
-      {camper.TV ? <EquipmentItem name="TV" text="TV" /> : null}
-      {camper.radio ? <EquipmentItem name="radio" text={"Radio"} /> : null}
-      {camper.refrigerator ? (
+      {camper.AC && <EquipmentItem name="AC" text="AC" />}
+      {camper.bathroom && <EquipmentItem name="bathroom" />}
+      {camper.kitchen && <EquipmentItem name="kitchen" />}
+      {camper.TV && <EquipmentItem name="TV" text="TV" />}
+      {camper.radio && <EquipmentItem name="radio" />}
+      {camper.refrigerator && (
         <EquipmentItem name="solar-fridge" text="Refrigerator" />
-      ) : null}
-      {camper.microwave ? (
-        <EquipmentItem name="microwave" iconColor="none" />
-      ) : null}
-      {camper.gas ? <EquipmentItem name="gas" iconColor="none" /> : null}
-      {camper.water ? <EquipmentItem name="water" iconColor="none" /> : null}
+      )}
+      {camper.microwave && <EquipmentItem name="microwave" iconColor="none" />}
+      {camper.gas && <EquipmentItem name="gas" iconColor="none" />}
+      {camper.water && <EquipmentItem name="water" iconColor="none" />}
     </div>
   );
 };

@@ -1,10 +1,6 @@
 import Cta from "../../components/Cta/Cta";
 
 const HomePage = () => {
-  return (
-    <div>
-      <Cta />
-    </div>
-  );
+  return <Cta />;
 };
 export default HomePage;

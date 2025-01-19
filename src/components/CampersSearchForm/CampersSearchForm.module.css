@@ -7,7 +7,7 @@
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  max-width: 360px;
+  min-width: 360px;
 }
 .location {
   width: 100%;
