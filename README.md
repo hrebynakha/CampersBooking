@@ -129,7 +129,8 @@ const handleBookingSubmit = (contact) => {
       contact.bookingDate
     )}`
   );
-  feedbackForm(contact); // just for user can write owns form logic
+  feedbackForm({ contact: contact, camper: camper });
+  // just for user can write owns form logic
 };
 ```
 
