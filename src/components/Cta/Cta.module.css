@@ -16,7 +16,7 @@
   width: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(80%);
+  filter: brightness(40%);
   position: absolute;
   top: 0;
   height: 100vh;
@@ -25,26 +25,54 @@
 .content {
   position: relative;
   z-index: 1;
-  padding: 260px 0;
-  margin: 0;
-  margin-left: 64px;
+  padding: 60px 0;
   color: var(--inputs);
 }
 
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 100px 0;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .content {
+    padding: 260px 0;
+  }
+}
 .title {
+  min-height: 96px;
   font-weight: 600;
-  font-size: 48px;
-  line-height: 67%;
-  margin-bottom: 16px;
+  font-size: 38px;
+  line-height: 100%;
 }
-
+@media screen and (min-width: 530px) {
+  .title {
+    min-height: auto;
+    line-height: 67%;
+    margin-bottom: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 67%;
+    margin-bottom: 16px;
+  }
+}
 .desc {
+  font-size: 20px;
+  margin-bottom: 20px;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 133%;
-  margin-bottom: 40px;
+  line-height: 120%;
 }
-
+@media screen and (min-width: 768px) {
+  .desc {
+    line-height: 133%;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
 .cursor {
   opacity: 0;
 }

@@ -5,7 +5,7 @@ import css from "./Header.module.css";
 
 const Header = ({ fixed }) => {
   return (
-    <header className={clsx(css.header, fixed ? css.fixed : "")}>
+    <header className={clsx(css.header, fixed && css.fixed)}>
       <Container>
         <Navigation />
       </Container>
