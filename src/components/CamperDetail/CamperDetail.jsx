@@ -35,6 +35,20 @@ const CamperDetail = () => {
     feedbackForm({ contact: contact, camper: camper });
     // just for user can write owns form logic
   };
+
+  const tabStyle = {
+    "&.Mui-selected": {
+      color: "#101828",
+    },
+    fontFamily: "Inter, sans-serif;",
+    fontWeight: 600,
+    fontSize: "20px",
+    lineHeight: "120%",
+    color: "#101828",
+    textTransform: "capitalize",
+    padding: 0,
+    paddingBottom: "24px",
+  };
   return camper ? (
     <>
       <h1 className={css.mainInfo}>{camper.name}</h1>
@@ -51,6 +65,11 @@ const CamperDetail = () => {
           <Box sx={{ borderBottom: 1, borderColor: "#dadde1" }}>
             <TabList
               onChange={handleChange}
+              sx={{
+                "& .MuiTabs-flexContainer": {
+                  gap: "24px",
+                },
+              }}
               aria-label="Camper tab"
               TabIndicatorProps={{
                 style: {
@@ -59,8 +78,8 @@ const CamperDetail = () => {
                 },
               }}
             >
-              <Tab label="Features" value="1" className={css.tab} />
-              <Tab label="Rewiews" value="2" className={css.tab} />
+              <Tab label="Features" value="1" sx={tabStyle} />
+              <Tab label="Rewiews" value="2" sx={tabStyle} />
             </TabList>
           </Box>
           <Box display="flex" flexDirection="row" marginTop="44px" gap="40px">

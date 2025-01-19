@@ -23,18 +23,7 @@
   line-height: 150%;
   color: var(--text);
 }
-.tab .Mui-selected {
-  color: #db2215 !important;
-  border-bottom: 2px solid #d22f19 !important;
-}
-.tab {
-  font-family: var(--font-family) !important;
-  font-weight: 600 !important;
-  font-size: 20px !important;
-  line-height: 120% !important;
-  color: var(--main) !important;
-  text-transform: capitalize !important;
-}
+
 .features {
   background-color: var(--inputs);
   border-radius: 10px;
